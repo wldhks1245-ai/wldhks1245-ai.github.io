@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok 연결 · 마이크로ZOOM 업로더</title><link rel="stylesheet" href="../style.css"></head>
+<body><main>
+<h1>TikTok 연결 승인 완료</h1>
+<p>아래 명령을 복사해서 PC의 newsbot 폴더 터미널에서 실행하면 연결이 끝나요. 이 코드는 한 번만 쓰이고 곧 만료돼요.</p>
+<code id="cmd">(코드가 없어요. TikTok 승인 화면에서 다시 시작해 주세요.)</code>
+<button id="copy">복사</button>
+<script>
+  const code = new URLSearchParams(location.search).get("code");
+  const el = document.getElementById("cmd");
+  if (code) el.textContent = `python tiktok.py code "${code}"`;
+  document.getElementById("copy").onclick = () => navigator.clipboard.writeText(el.textContent);
+</script>
+</main></body></html>
